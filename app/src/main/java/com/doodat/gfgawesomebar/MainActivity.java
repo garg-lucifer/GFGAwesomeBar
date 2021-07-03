@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         // adding action button in AwesomeBar with drawable and text
         bar.addAction(R.drawable.awsb_ic_edit_animated, "Add Post");
 
-        // adding OverFlowItem item in AwesomeBar
+        // adding the OverFlowItem item in AwesomeBar - no need to create menu folder
         bar.addOverflowItem("Settings");
         bar.addOverflowItem("About");
 
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onActionItemClicked(int position, ActionItem actionItem) {
                 // toast is shown when action item is pressed.
-                Toast.makeText(getBaseContext(), actionItem.getText()+" clicked", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), actionItem.getText()+" clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onOverflowActionItemClicked(int position, String item) {
                 // toast is shown when an OverFlowAction item is pressed.
-                Toast.makeText(getBaseContext(), item+" clicked", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), item+" clicked", Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // opens the navigation drawer from start
+                Toast.makeText(getBaseContext(), "Opening Navigation  Drawer", Toast.LENGTH_SHORT).show();
                 drawerLayout.openDrawer(Gravity.START);
             }
         });
